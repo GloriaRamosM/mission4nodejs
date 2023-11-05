@@ -1,20 +1,13 @@
 const express = require("express");
 const rout = express.Router();
+const adminControllers = require("../controllers/adminControllers");
 
-rout.get("/", (req, res) => res.send("Route for Admin view"));
-rout.get("/create", (req, res) => res.send("Route for admin/create view"));
-rout.post("/create", (req, res) =>
-  res.send("Route for admin/create view pero post")
-);
-rout.get("/edit/:id", (req, res) =>
-  res.send("Route for admin/edit id pero get ")
-);
+rout.get("/", adminControllers.admin);
+rout.get("/create", adminControllers.create);
+rout.post("/create", adminControllers.createPost);
+rout.get("/edit/:id", adminControllers.editId);
 
-rout.put("/edit/:id", (req, res) =>
-  res.send("Route for admin/edit/:id pero put")
-);
-rout.delete("/delete/:id", (req, res) =>
-  res.send("Route for admin delete id view")
-);
+rout.put("/edit/:id", adminControllers.editIdPut);
+rout.delete("/delete/:id", adminControllers.delete);
 
 module.exports = rout;
