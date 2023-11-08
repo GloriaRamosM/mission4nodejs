@@ -4,7 +4,7 @@ const shopControllers = {
     res.send("Route for find and retrieve a product from an ID"),
   itemIdAdd: (req, res) =>
     res.send("Route for  add the current item to the shop cart"),
-  cart: (req, res) => res.send("Route for cart view"),
+  cart: (req, res) => res.send("Route for cart vista"),
   cartPost: (req, res) => res.send("Route for got to checkout page"),
 };
 
